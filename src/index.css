@@ -1,0 +1,350 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* EncodLab Studio Design System - Modern JWT Tool */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+
+@layer base {
+  :root {
+    /* Sistema - Tema adaptativo neutro com toques modernos */
+    --background: 240 6% 8%;
+    --foreground: 240 5% 94%;
+
+    /* Card System */
+    --card: 240 6% 12%;
+    --card-foreground: 240 5% 94%;
+
+    /* Interactive Elements */
+    --popover: 240 6% 12%;
+    --popover-foreground: 240 5% 94%;
+
+    /* Brand Colors - Sistema usa tons mais suaves */
+    --primary: 220 80% 60%;
+    --primary-foreground: 240 6% 12%;
+    --primary-glow: 230 85% 68%;
+
+    /* Secondary System */
+    --secondary: 240 5% 18%;
+    --secondary-foreground: 240 5% 94%;
+
+    /* Muted Elements */
+    --muted: 240 5% 18%;
+    --muted-foreground: 240 4% 70%;
+
+    /* Accent Colors */
+    --accent: 270 75% 68%;
+    --accent-foreground: 240 6% 12%;
+
+    /* Status Colors */
+    --destructive: 0 70% 58%;
+    --destructive-foreground: 240 5% 94%;
+    --success: 142 70% 50%;
+    --success-foreground: 240 5% 94%;
+    --warning: 40 95% 60%;
+    --warning-foreground: 240 6% 12%;
+
+    /* Border System */
+    --border: 240 5% 18%;
+    --input: 240 5% 18%;
+    --ring: 220 80% 60%;
+
+    /* Syntax Highlighting */
+    --syntax-keyword: 280 70% 75%;
+    --syntax-string: 120 60% 70%;
+    --syntax-number: 35 80% 70%;
+    --syntax-boolean: 190 70% 70%;
+    --syntax-null: 240 10% 60%;
+    --syntax-property: 200 70% 75%;
+
+    /* Gradients - Sistema usa gradientes suaves */
+    --gradient-primary: linear-gradient(135deg, hsl(220 80% 60%), hsl(230 85% 68%));
+    --gradient-secondary: linear-gradient(135deg, hsl(240 5% 18%), hsl(240 6% 12%));
+    --gradient-accent: linear-gradient(135deg, hsl(270 75% 68%), hsl(290 70% 72%));
+    --gradient-glow: radial-gradient(circle at center, hsl(220 80% 60% / 0.15), transparent 70%);
+    --gradient-success: linear-gradient(135deg, hsl(142 70% 50%), hsl(120 60% 45%));
+    --gradient-warning: linear-gradient(135deg, hsl(40 95% 60%), hsl(45 90% 65%));
+    --gradient-cyber: linear-gradient(135deg, hsl(180 70% 55%), hsl(220 80% 60%));
+
+    /* Shadows */
+    --shadow-glow: 0 0 25px hsl(220 80% 60% / 0.15);
+    --shadow-card: 0 4px 20px hsl(240 6% 8% / 0.3);
+    --shadow-input: inset 0 1px 2px hsl(240 6% 8% / 0.1);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.35);
+
+    --radius: 0.75rem;
+
+    /* Sidebar System */
+    --sidebar-background: 240 6% 8%;
+    --sidebar-foreground: 240 5% 94%;
+    --sidebar-primary: 220 80% 60%;
+    --sidebar-primary-foreground: 240 6% 12%;
+    --sidebar-accent: 240 5% 18%;
+    --sidebar-accent-foreground: 240 5% 94%;
+    --sidebar-border: 240 5% 18%;
+    --sidebar-ring: 220 80% 60%;
+  }
+
+  .dark {
+    /* Escuro - Tema escuro profissional com contrastes marcantes */
+    --background: 222 47% 3%;
+    --foreground: 210 40% 98%;
+
+    /* Card System */
+    --card: 224 71% 4%;
+    --card-foreground: 210 40% 98%;
+
+    /* Interactive Elements */
+    --popover: 224 71% 4%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Brand Colors - Cyber Blue/Purple intenso */
+    --primary: 237 100% 70%;
+    --primary-foreground: 224 71% 4%;
+    --primary-glow: 249 100% 80%;
+
+    /* Secondary System */
+    --secondary: 217 33% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    /* Muted Elements */
+    --muted: 217 33% 15%;
+    --muted-foreground: 215 20% 75%;
+
+    /* Accent Colors */
+    --accent: 300 100% 75%;
+    --accent-foreground: 224 71% 4%;
+
+    /* Status Colors */
+    --destructive: 0 90% 65%;
+    --destructive-foreground: 210 40% 98%;
+    --success: 142 90% 55%;
+    --success-foreground: 224 71% 4%;
+    --warning: 38 100% 65%;
+    --warning-foreground: 224 71% 4%;
+
+    /* Border System */
+    --border: 217 33% 15%;
+    --input: 217 33% 15%;
+    --ring: 237 100% 70%;
+
+    /* Syntax Highlighting */
+    --syntax-keyword: 300 100% 85%;
+    --syntax-string: 120 100% 80%;
+    --syntax-number: 39 100% 80%;
+    --syntax-boolean: 195 100% 80%;
+    --syntax-null: 0 0% 70%;
+    --syntax-property: 200 100% 85%;
+
+    /* Gradients - Escuro usa gradientes vibrantes */
+    --gradient-primary: linear-gradient(135deg, hsl(237 100% 70%), hsl(249 100% 80%));
+    --gradient-secondary: linear-gradient(135deg, hsl(217 33% 15%), hsl(224 71% 4%));
+    --gradient-accent: linear-gradient(135deg, hsl(300 100% 75%), hsl(320 100% 80%));
+    --gradient-glow: radial-gradient(circle at center, hsl(237 100% 70% / 0.4), transparent 70%);
+    --gradient-success: linear-gradient(135deg, hsl(142 90% 55%), hsl(120 100% 50%));
+    --gradient-warning: linear-gradient(135deg, hsl(38 100% 65%), hsl(45 100% 70%));
+    --gradient-cyber: linear-gradient(135deg, hsl(180 100% 60%), hsl(240 100% 75%));
+
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsl(237 100% 70% / 0.4);
+    --shadow-card: 0 10px 40px hsl(224 71% 4% / 0.6);
+    --shadow-input: inset 0 2px 4px hsl(224 71% 4% / 0.3);
+  }
+
+  .light {
+    /* Claro - Tema claro moderno e profissional */
+    --background: 60 9% 98%;
+    --foreground: 240 10% 3.9%;
+
+    /* Card System */
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    /* Interactive Elements */
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    /* Brand Colors - Claro usa tons mais suaves mas vibrantes */
+    --primary: 237 85% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 249 80% 65%;
+
+    /* Secondary System */
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    /* Muted Elements */
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 45%;
+
+    /* Accent Colors */
+    --accent: 270 70% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Status Colors */
+    --destructive: 0 80% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 70% 40%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 85% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    /* Border System */
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 237 85% 55%;
+
+    /* Syntax Highlighting */
+    --syntax-keyword: 280 70% 45%;
+    --syntax-string: 120 60% 35%;
+    --syntax-number: 35 80% 45%;
+    --syntax-boolean: 190 70% 45%;
+    --syntax-null: 240 10% 50%;
+    --syntax-property: 200 70% 45%;
+
+    /* Gradients - Claro usa gradientes elegantes */
+    --gradient-primary: linear-gradient(135deg, hsl(237 85% 55%), hsl(249 80% 65%));
+    --gradient-secondary: linear-gradient(135deg, hsl(240 4.8% 95.9%), hsl(0 0% 100%));
+    --gradient-accent: linear-gradient(135deg, hsl(270 70% 60%), hsl(290 65% 65%));
+    --gradient-glow: radial-gradient(circle at center, hsl(237 85% 55% / 0.08), transparent 70%);
+    --gradient-success: linear-gradient(135deg, hsl(142 70% 40%), hsl(120 60% 35%));
+    --gradient-warning: linear-gradient(135deg, hsl(38 85% 50%), hsl(45 80% 55%));
+    --gradient-cyber: linear-gradient(135deg, hsl(180 70% 45%), hsl(220 75% 55%));
+
+    /* Shadows */
+    --shadow-glow: 0 0 20px hsl(237 85% 55% / 0.15);
+    --shadow-card: 0 1px 3px hsl(240 10% 3.9% / 0.1), 0 1px 2px hsl(240 10% 3.9% / 0.06);
+    --shadow-input: inset 0 1px 2px hsl(240 10% 3.9% / 0.05);
+
+    /* Sidebar System */
+    --sidebar-background: 60 9% 98%;
+    --sidebar-foreground: 240 10% 3.9%;
+    --sidebar-primary: 237 85% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 240 5.9% 90%;
+    --sidebar-ring: 237 85% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  code, pre {
+    font-family: 'JetBrains Mono', 'Monaco', 'Cascadia Code', monospace;
+  }
+
+  /* Melhora a transição entre temas */
+  html, body, div, span, header, main, section, article, aside, nav {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+}
+
+@layer components {
+  /* Overlay Scrollbars - Modern floating scrollbars */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border) / 0.3);
+    border-radius: 4px;
+    border: 1px solid transparent;
+    background-clip: content-box;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.6);
+    opacity: 1;
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+  /* Show scrollbar on hover or scroll */
+  *:hover::-webkit-scrollbar-thumb,
+  *:focus::-webkit-scrollbar-thumb,
+  .scrolling::-webkit-scrollbar-thumb {
+    opacity: 1;
+    background: hsl(var(--border) / 0.5);
+  }
+
+  /* Firefox scrollbar styling */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border) / 0.3) transparent;
+  }
+
+  /* Syntax Highlighting Classes */
+  .syntax-keyword { @apply text-[hsl(var(--syntax-keyword))]; }
+  .syntax-string { @apply text-[hsl(var(--syntax-string))]; }
+  .syntax-number { @apply text-[hsl(var(--syntax-number))]; }
+  .syntax-boolean { @apply text-[hsl(var(--syntax-boolean))]; }
+  .syntax-null { @apply text-[hsl(var(--syntax-null))]; }
+  .syntax-property { @apply text-[hsl(var(--syntax-property))]; }
+
+  /* Gradient Backgrounds */
+  .bg-gradient-primary { background: var(--gradient-primary); }
+  .bg-gradient-secondary { background: var(--gradient-secondary); }
+  .bg-gradient-accent { background: var(--gradient-accent); }
+  .bg-gradient-success { background: var(--gradient-success); }
+  .bg-gradient-warning { background: var(--gradient-warning); }
+  .bg-gradient-cyber { background: var(--gradient-cyber); }
+
+  /* Glow Effects */
+  .glow-primary { box-shadow: var(--shadow-glow); }
+  .glow-card { box-shadow: var(--shadow-card); }
+
+  /* Interactive Elements */
+  .interactive {
+    @apply transition-all duration-300 ease-out;
+    transition: var(--transition-smooth);
+  }
+
+  .interactive:hover {
+    @apply scale-[1.02] shadow-lg;
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* JWT Token Display */
+  .jwt-token {
+    @apply font-mono text-sm bg-card border rounded-lg p-4;
+    box-shadow: var(--shadow-input);
+    word-break: break-all;
+    line-height: 1.6;
+  }
+
+  /* Animated Underline */
+  .animated-underline {
+    @apply relative;
+  }
+
+  .animated-underline::after {
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+    content: '';
+  }
+
+  .animated-underline:hover::after {
+    @apply w-full;
+  }
+}
