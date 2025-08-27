@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: mode === 'production' ? '/encodlab-studio-v2.0/' : '/',
+  base: mode === 'production' ? './encodlab-studio-v2.0/' : '/',
   server: {
     host: "::",
     port: 8080,
